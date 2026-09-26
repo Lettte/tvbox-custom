@@ -1,26 +1,32 @@
 [
   {
-  "key": "CUSTOM_SITE_1",
-  "name": "MissAV（待填）",
-  "type": 3,
-  "api": "__FILL_API__",
-  "jar": "__FILL_JAR_URL__",
-  "ext": "__FILL_EXT__",
-  "searchable": 0,
-  "quickSearch": 0,
-  "filterable": 0,
-  "changeable": 0
+    "key": "MissAV",
+    "name": "MissAV",
+    "type": 3,
+    "api": "csp_Miss",
+    "jar": "https://raw.githubusercontent.com/qist/tvbox/master/jar/pg_upgraded.jar;md5;e58c3a2975d24db4978065ab895cf297",
+    "searchable": 1,
+    "recordable": 0,
+    "style": {
+      "type": "rect",
+      "ratio": 1.78
+    }
   },
   {
-    "key": "CUSTOM_SITE_2",
-    "name": "JavDB（待填）",
+    "key": "csp_JavDb",
+    "name": "JavDb",
     "type": 3,
-    "api": "__FILL_API__",
-    "jar": "__FILL_JAR_URL__",
-    "ext": "__FILL_EXT__",
-    "searchable": 0,
-    "quickSearch": 0,
-    "filterable": 0,
-    "changeable": 0
+    "api": "csp_JavDb",
+    "jar": "https://raw.githubusercontent.com/qist/tvbox/master/jar/pg_upgraded.jar;md5;e58c3a2975d24db4978065ab895cf297",
+    "searchable": 1,
+    "quickSearch": 1,
+    "filterable": 1,
+    "changeable": 0,
+    "style": {
+      "type": "rect",
+      "ratio": 1.77
+    },
+    "timeout": 60,
+    "ext": "https://raw.githubusercontent.com/qist/tvbox/master/lib/token.json"
   }
 ]
