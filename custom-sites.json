@@ -1,11 +1,9 @@
 [
   {
-    "key": "CUSTOM_SITE_1",
-    "name": "MissAV（待填）",
-    "type": 3,
-    "api": "__FILL_API__",
-    "jar": "__FILL_JAR_URL__",
-    "ext": "__FILL_EXT__",
+    "key": "TEST_SITE",
+    "name": "测试站点",
+    "type": 1,
+    "api": "https://api.apibdzy.com/api.php/provide/vod?ac=list",
     "searchable": 0,
     "quickSearch": 0,
     "filterable": 0,
