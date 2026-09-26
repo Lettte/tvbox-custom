@@ -27,24 +27,54 @@ jobs:
           python3 - <<'PY'
           import json
 
+          BASE = "https://raw.githubusercontent.com/qist/tvbox/master/"
+
+          def fix_relative(value):
+              if isinstance(value, dict):
+                  return {k: fix_relative(v) for k, v in value.items()}
+
+              if isinstance(value, list):
+                  return [fix_relative(v) for v in value]
+
+              if isinstance(value, str):
+                  if value.startswith("./"):
+                      return BASE + value[2:]
+
+                  value = value.replace(
+                      "$$$./",
+                      "$$$" + BASE
+                  )
+
+                  return value
+
+              return value
+
           with open("jsm-upstream.json", "r", encoding="utf-8") as f:
               base = json.load(f)
+
+          # 把 qist 配置里的 ./ 相对路径，
+          # 改成仍然指向 qist 仓库的绝对地址。
+          base = fix_relative(base)
 
           with open("custom-sites.json", "r", encoding="utf-8") as f:
               custom = json.load(f)
 
-          # 只合并已经填写完成的自定义站点。
-          # 目前带 __FILL_ 的占位项会被自动忽略。
           valid = []
           for site in custom:
               text = json.dumps(site, ensure_ascii=False)
+
               if "__FILL_" not in text:
                   valid.append(site)
 
           base.setdefault("sites", []).extend(valid)
 
           with open("jsm-plus.json", "w", encoding="utf-8") as f:
-              json.dump(base, f, ensure_ascii=False, indent=2)
+              json.dump(
+                  base,
+                  f,
+                  ensure_ascii=False,
+                  indent=2
+              )
               f.write("\n")
 
           print("upstream sites:", len(base["sites"]) - len(valid))
