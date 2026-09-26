@@ -1,7 +1,7 @@
 [
   {
     "key": "CUSTOM_SITE_1",
-    "name": "自定义站点 1",
+    "name": "MissAV（待填）",
     "type": 3,
     "api": "__FILL_API__",
     "jar": "__FILL_JAR_URL__",
@@ -13,7 +13,7 @@
   },
   {
     "key": "CUSTOM_SITE_2",
-    "name": "自定义站点 2",
+    "name": "JavDB（待填）",
     "type": 3,
     "api": "__FILL_API__",
     "jar": "__FILL_JAR_URL__",
